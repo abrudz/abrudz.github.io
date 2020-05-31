@@ -24,6 +24,8 @@
 			</h1>
 			<p>Place the cursor on a symbol or other built-in and press <kbd>F1</kbd> to go straight to the help page for it.
 			<p>Try it (the above tip) now for <code>)ed</code> to learn how to quickly create new items of various types!
+			<p><code>)ed "file:///path/file.ext"</code> lets you edit plain-text files, and upon closing, APL will ask you how to use the content.
+			<p>You can load APL functions/operators/objects from plain-text files with <code>2⎕FIX'file:///path/file.ext'</code>
 			<p>If you enter <code>)off</code> then your session log is saved before APL closes, so you can simply scroll up when you're ready to continue.
 			<p>If you enter <code>)continue</code> then your workspace is saved with a temporary name and you can get it back with <code>)load continue</code>&nbsp.
 			<p>Get all the technical details of the last error or event with <code>⎕JSON⍠'Compact'0⊢⎕DMX</code>&nbsp.
