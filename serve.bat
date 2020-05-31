@@ -1,0 +1,1 @@
+http-server \g\abrudz.github.io

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="shortcut icon" href="/favicon.ico">
+		<title>APL style</title>
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
+		<link href="/style.css" rel="stylesheet"/>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<input tabindex="-1" type="checkbox" id="b" checked="checked"/>
+		<input tabindex="-1" type="checkbox" id="f" checked="checked"/>
+		<div>
+			<h1>
+				<span class="l">
+					<label for="b" title="b̲lack/white" accesskey="b" onclick="b.click();event.preventDefault()"><a href=""><img src="/contrast.svg"/></a></label>
+					<label for="f" title="f̲ont"         accesskey="f" onclick="f.click();event.preventDefault()"><a href=""><img src="/font.svg"    /></a></label>
+				</span>
+				<a href="/" id="h1c">APL style</a>
+				<span class="r">
+					<a title="d̲onate" href="https://github.com/sponsors/abrudz" accesskey="d"><img src="/heart.svg"/></a>
+					<a title="c̲ontribute" href="https://github.com/abrudz/style" accesskey="g"><img src="/github.svg"/></a>
+				</span>
+			</h1>
+			<h2><a href="#fn">Functions</a></h2>
+			<h3 id="gr"><a href="#gr">General rules</a></h3>
+			<p>Don't be afraid of giving a function a good name even if only to use it once. Avoid diamonds and inline assignments unless necessary to show symmetries. Never use inline assignments that prevent re-executing the line if it errors when partially executed. Modified assignment is fine in moderation, and only within a visual range of the original assignment. Try to keep functions fitting on the screen. Break larger functions into sub-functions if necessary, but do not rely on semi-globals except for small inline dfns that loop to augment an accumulator.</p>
+			<p>Avoid relying on errors if at all possible. Do as many test as necessary instead.</p>
+			<p>Prefer <code>⍤</code> over bracket axis. Bracket indexing is fine if <code>⌷</code> would complicate the code.</p>
+			<h3 id="pr"><a href="#pr">Parentheses</a></h3>
+			<p>Use sparingly, and especially not for changing the order of execution. Use <code>⍨</code> or a variable instead. For example, instead of
+			<table class="c13 center">
+				<tbody>
+					<tr><td class="code">r←(2↑a),b</td><td class="code">R←(2↑⊣),⊢</td></tr>
+					<tr><td colspan="2">write</td></tr>
+					<tr><td class="code">r←b,⍨2↑a</td><td class="code">R←⊢,⍨2↑⊣</td></tr>
+					<tr><td  colspan="2">or</td></tr>
+					<tr><td class="code">head←2↑a</br>r←head,b</td><td class="code">Head←2↑⊣<br>R←Head,⊢</td></tr>
+				</tbody>
+			</table>
+			<p>Acceptable uses of parentheses are:</p>
+			<ol>
+				<li>Short inline trains — long trains should be broken out and/or split up</li>
+				<li>Application of derived functions with array operands</li>
+				<li>Stranding including strand assignment &mdash; always parenthesise strand assignement!</li>
+				<li>Forcing slashes to behave as functions</li>
+			</ol>
+			<h3 id="tf"><a href="#tf">Tradfns</a></h3>
+			<p>For large "scripts" and structured programs. Use proper structures, not branching or early returns (<code>→0</code> and <code>:GoTo 0</code> and <code>:Return</code>). Rather, always use a full <code>:If</code> statement to skip to the end.</p>
+			<h3 id="df"><a href="#df">Dfns</a></h3>
+			<p>For medium sized functions and utilities. Nested dfns are fine, but never use multi-line dfns inline. Rather, give them names and then apply them. Named dfns should be multi-line so they can be traced into, unless truly trivial.</p>
+			<p>Do not use a dfn instead of naming a variable. For example, instead of</p>
+			<pre>r←{⍵/⍨10≤⍵}a,b</pre>
+			<p>write</p>
+			<pre>candidates←a,b
+r←candidates/⍨10≤candidates</pre>
+			<h3 id="tc"><a href="#tc">Tacit functions</a></h3>
+			<p>Trains and derived functions can be used inline if they are not too complex. If they need internal parentheses for anything other than the reasons 2&ndash;4 above, they <em>are</em> too complex.</p>
+			<h2 id="id"><a href="#id">Identifiers</a></h2>
+			<p>Use proper names for things, not abbreviations, unless common for the field in question. Name variables for what they signify, not how they are used. For example, call a mask of chess positions that are inside the board <code>inside</code> rather than <code>valid</code>. Name functions for what they do or compute rather than what they are used for. For example, name a function <code>Attributes</code> rather than <code>ExtractAttributes</code> and <code>Compress</code> rather than <code>ApplyCompression</code>.</p>
+			<h2 id="cm"><a href="#cm">Comments</a></h2>
+			<p>All named functions should begin with a comment on their purpose. Larger functions should begin with a comment section describing argument(s) and result.</p>
+			<p>Introduce sections of larger functions with a comment describing the section's purpose. Also comment lines that are non-obvious, but tell what they do, not how they do it.</p>
+			<h2 id="st"><a href="#st">Structure</a></h2>
+			<p>In tradfns, use <code>:Section</code> with a descriptor to delimit larger amounts of code dedicated a separate purpose. One line for every half-dozen or so should be left blank, preferrably preceded by a comment describing the purpose of the next few lines. If two lines have exactly the same structure, for example because two equivalent arguments need preprocessing before being merged, then put a blank line before and after those two to emphasise this.</p>
+			<h2 id="nc"><a href="#nc">Naming Convensions</a></h2>
+			<p>If a function computes something, then it is likely that an appropriate name for the result will also be an appropriate name for the function (save for casing).</p>
+			<p>The below schemes allow the reader to distinguish syntactic classes, thereby enabling static analysis of the code. Note that the naming schemes distinguish the <em>role</em> of identifiers, not the name class (<code>⎕NC</code>). This means that niladic functions are named like variables because thay play the syntactic role of arrays.</p>
+			<h3 id="cc"><a href="#cc">Camel Case</a></h3>
+			<table class="c23">
+				<tbody>
+					<tr>
+						<td>labels use all caps</td>
+						<td> NAME</td>
+						<td> MULTIWORD</td>
+						<td>labels</td>
+					</tr>
+					<tr>
+						<td>arrays use lower camel case (a.k.a. dromedary case)</td>
+						<td> name</td>
+						<td> multiWord</td>
+						<td>constants, variables, fields, properties, niladic functions</td>
+					</tr>
+					<tr>
+						<td>functions use upper camel case (a.k.a. Pascal case)</td>
+						<td> Name</td>
+						<td> MultiWord</td>
+						<td>tradfns, dfns, derived functions, trains</td>
+					</tr>
+					<tr>
+						<td>modifiers use upper camel case with underscore prefix</td>
+						<td>_Name</td>
+						<td>_MultiWord</td>
+						<td>monadic operators, dyadic operators with curried right operands</td>
+					</tr>
+					<tr>
+						<td>combinators use upper camel case with underscore omnifix</td>
+						<td>_Name_</td>
+						<td>_MultiWord_</td>
+						<td>dyadic operators</td>
+					</tr>
+				</tbody>
+			</table>
+			<h3 nc="sc"><a href="#sc">Snake Case</a></h3>
+			<table class="c23">
+				<tbody>
+					<tr>
+						<td>labels use snake case caps</td>
+						<td> NAME</td>
+						<td> MULTI_WORD</td>
+						<td>labels</td>
+					</tr>
+					<tr>
+						<td>arrays use lower snake case</td>
+						<td> name</td>
+						<td> multi_word</td>
+						<td>constants, variables, fields, properties, niladic functions</td>
+					</tr>
+					<tr>
+						<td>functions use upper snake case</td>
+						<td> Name</td>
+						<td> Multi_word</td>
+						<td>tradfns, dfns, derived functions, trains</td>
+					</tr>
+					<tr>
+						<td>modifiers use upper snake case with underscore prefix</td>
+						<td>_Name</td>
+						<td>_Multi_word</td>
+						<td>monadic operators, dyadic operators with curryied right operands</td>
+					</tr>
+					<tr>
+						<td>combinators use upper snake case with underscore omnifix</td>
+						<td>_Name_</td>
+						<td>_Multi_word_</td>
+						<td>dyadic operators</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>

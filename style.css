@@ -1,0 +1,25 @@
+@font-face{font-family:SAX2;src:local("SAX2"),url("/SAX2.ttf")}
+body{margin:0;font-size:1.33rem;height:100vh}
+body>div{background:#fff;padding:0 2em;height:100vh;overflow-y:scroll}
+table{width:100%}
+code{padding:0 0.125em}
+input{position:absolute;top:-2em}
+i{height:24px;margin:0 0.125em}
+.center{text-align:center}
+h1{text-align:center;position:relative;font-size:2.33rem}
+h2{font-size:1.67rem}
+.l,.r{position:absolute}
+.l{left:0}.r{right:0}
+#h{z-index:1}
+a{color:unset}
+th,#h1c,h2,h3{color:#555}
+h1,h2,h3{margin-bottom:0}
+th{text-align:left}
+a:hover{color:#000}
+img{height:1.3ex;opacity:0.67}
+a,h1 img:hover{opacity:1}
+#b:checked~div{filter:invert(1) hue-rotate(180deg)}
+#f:checked~div{font-family:"IBM Plex Sans"}
+#f:checked~div pre,#f:checked~div code,#f:checked~div .code{font-family:SAX2}
+pre{padding-left:2em}
+kbd{font-family:unset;border:1px solid currentColor;padding:0 0.2ex;border-radius:0.2em;margin:0 0.1ex}
