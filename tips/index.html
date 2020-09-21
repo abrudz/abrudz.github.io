@@ -29,9 +29,10 @@
 			<p>If you enter <code>)off</code> then your session log is saved before APL closes, so you can simply scroll up when you're ready to continue.
 			<p>If you enter <code>)continue</code> then your workspace is saved with a temporary name and you can get it back with <code>)load continue</code>&nbsp.
 			<p>Get all the technical details of the last error or event with <code>⎕JSON⍠'Compact'0⊢⎕DMX</code>&nbsp.
-			<p><code>]box on -trains=tree -fns=on</code> will make it much easier to discern the structure of your arrays</p>
+			<p><code>]box on -trains=tree -fns=on</code> will make it much easier to discern the structure of your arrays and tacit functions</p>
 			<p><code>]box -style=max</code> will give you a verbose view including hints for axes and data types. See all the options with <code>]box -??</code>&nbsp;.
 			<p><code>]rows on -fold=3</code> will let you scroll horizontally and trim large outputs so they don't flood your screen vertically.
+			<p>The above three settings can be made permanent by saving your session (Session&rtrif;Save in the Windows IDE or <code>2⎕NQ⎕SE'FileWrite'</code>)
 			<p>Use <code>⎕SE.Dyalog.Utils.repObj myArray</code> to generate an expression for (almost) any given array.
 			<p>Use <kbd>Shift</kbd>+<kbd>Enter</kbd> to open an edit window on a suspended function. 
 			<p><code>]map</code> displays the content and structure of your workspace.
