@@ -29,9 +29,9 @@
 			<nav id="toc"></nav>
 			<h2 id="fn"><a href="#fn">Functions</a></h2>
 			<h3 id="gr"><a href="#gr">General rules</a></h3>
-			<p>Don't be afraid of giving a function a good name even if only to use it once. Avoid diamonds and inline assignments unless necessary to show symmetries. Never use inline assignments that prevent re-executing the line if it errors when partially executed. Modified assignment is fine in moderation, and only within a visual range of the original assignment. Try to keep functions fitting on the screen. Break larger functions into sub-functions if necessary, but do not rely on semi-globals except for small inline dfns that loop to augment an accumulator.</p>
-			<p>Avoid relying on errors if at all possible. Do as many test as necessary instead.</p>
-			<p>Prefer <code>⍤</code> over bracket axis. Bracket indexing is fine if <code>⌷</code> would complicate the code.</p>
+			<p>Don't be afraid of giving a function a good name even if only to use it once. Avoid diamonds and inline assignments unless necessary to show symmetries. Never use inline assignments that prevent re-executing the line if it errors when partially executed. Modified assignment is fine in moderation, and only within a visual range of the original assignment. Do as many test as necessary rather than relying on trapping errors. Prefer Rank (<code>⍤</code>) over bracket axis. Bracket indexing is fine if <code>⌷</code> would complicate the code. Localise relevant system variables rather than attempt to write code that can handle all combinations of <code>⎕IO</code>, <code>⎕ML</code>, <code>⎕WX</code>, <code>⎕DIV</code> etc.</p>
+			<p>Try to keep functions fitting on the screen. Break larger functions into sub-functions if necessary, but do not rely on semi-globals except for small inline dfns that loop to augment an accumulator.</p>
+			<p>For optimal performance, keep your arrays homogenous, flat, and with the last dimension used for data that will be read in sequence. However, this can impact readability, so reserve extremism to performance-critical code.</p>
 			<h3 id="pr"><a href="#pr">Parentheses</a></h3>
 			<p>Use sparingly, and especially not for changing the order of execution. Use <code>⍨</code> or a variable instead. For example, instead of
 			<table class="c13 center">
