@@ -23,3 +23,4 @@ a,h1 img:hover{opacity:1}
 #f:checked~div pre,#f:checked~div code,#f:checked~div .code{font-family:SAX2}
 pre{padding-left:2em}
 kbd{font-family:unset;border:1px solid currentColor;padding:0 0.2ex;border-radius:0.2em;margin:0 0.1ex}
+#toc s{margin-left:1em}

@@ -6,9 +6,9 @@
 		<title>APL style</title>
 		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
 		<link href="/style.css" rel="stylesheet"/>
-		<style>
-			
-		</style>
+		<script>
+			window.addEventListener('load',_=>toc.innerHTML=([...document.querySelectorAll("h2,h3,h4,h5,h6")].map(e=>e.id?"<s></s>".repeat(e.tagName[1]-2)+"<a href='#"+e.id+"'>"+e.innerText+"</a>":"").join("<br>")))
+		</script>
 	</head>
 	<body>
 		<input tabindex="-1" type="checkbox" id="b" checked="checked"/>
@@ -25,7 +25,9 @@
 					<a title="c̲ontribute" href="https://github.com/abrudz/abrudz.github.io" accesskey="g"><img src="/github.svg"/></a>
 				</span>
 			</h1>
-			<h2><a href="#fn">Functions</a></h2>
+			<h2>Table of Contents</h2>
+			<nav id="toc"></nav>
+			<h2 id="fn"><a href="#fn">Functions</a></h2>
 			<h3 id="gr"><a href="#gr">General rules</a></h3>
 			<p>Don't be afraid of giving a function a good name even if only to use it once. Avoid diamonds and inline assignments unless necessary to show symmetries. Never use inline assignments that prevent re-executing the line if it errors when partially executed. Modified assignment is fine in moderation, and only within a visual range of the original assignment. Try to keep functions fitting on the screen. Break larger functions into sub-functions if necessary, but do not rely on semi-globals except for small inline dfns that loop to augment an accumulator.</p>
 			<p>Avoid relying on errors if at all possible. Do as many test as necessary instead.</p>
@@ -110,7 +112,7 @@ r←candidates/⍨10≤candidates</pre>
 					</tr>
 				</tbody>
 			</table>
-			<h3 nc="sc"><a href="#sc">Snake Case</a></h3>
+			<h3 id="sc"><a href="#sc">Snake Case</a></h3>
 			<table class="c23">
 				<tbody>
 					<tr>
