@@ -22,6 +22,7 @@ th{text-align:left}
 a:hover{color:#000}
 img{height:1.3ex;opacity:0.67}
 a,h1 img:hover{opacity:1}
+.code{font-family:monospace}
 #b:checked~div{filter:invert(1) hue-rotate(180deg)}
 #f:checked~div{font-family:P}
 #f:checked~div pre,#f:checked~div code,#f:checked~div .code{font-family:M}
