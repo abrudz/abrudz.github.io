@@ -4,7 +4,6 @@
 		<meta charset="utf-8"/>
 		<link rel="shortcut icon" href="/favicon.ico">
 		<title>APL style</title>
-		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
 		<link href="/style.css" rel="stylesheet"/>
 		<script>
 			window.addEventListener('load',_=>toc.innerHTML=([...document.querySelectorAll("h2,h3,h4,h5,h6")].map(e=>e.id?"<s></s>".repeat(e.tagName[1]-2)+"<a href='#"+e.id+"'>"+e.innerText+"</a>":"").join("<br>")))
