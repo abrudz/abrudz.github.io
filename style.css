@@ -1,4 +1,8 @@
-@font-face{font-family:SAX2;src:local("SAX2"),url("/SAX2.ttf")}
+@font-face{font-family:M;src:local("SAX2"),url("/SAX2.ttf")}
+@font-face{font-family:P;src:local("Atkinson Hyperlegible"),url("/Atkinson-Hyperlegible-Regular-102a.woff2");   font-weight:normal;font-style:normal}
+@font-face{font-family:P;src:local("Atkinson Hyperlegible"),url("/Atkinson-Hyperlegible-Bold-102a.woff2");      font-weight:bold;  font-style:normal}
+@font-face{font-family:P;src:local("Atkinson Hyperlegible"),url("/Atkinson-Hyperlegible-Italic-102a.woff2");    font-weight:normal;font-style:italic}
+@font-face{font-family:P;src:local("Atkinson Hyperlegible"),url("/Atkinson-Hyperlegible-BoldItalic-102a.woff2");font-weight:bold;  font-style:italic}
 body{margin:0;font-size:1.33rem;height:100vh}
 body>div{background:#fff;padding:0 2em;height:100vh;overflow-y:scroll}
 table{width:100%}
@@ -19,8 +23,8 @@ a:hover{color:#000}
 img{height:1.3ex;opacity:0.67}
 a,h1 img:hover{opacity:1}
 #b:checked~div{filter:invert(1) hue-rotate(180deg)}
-#f:checked~div{font-family:"IBM Plex Sans"}
-#f:checked~div pre,#f:checked~div code,#f:checked~div .code{font-family:SAX2}
+#f:checked~div{font-family:P}
+#f:checked~div pre,#f:checked~div code,#f:checked~div .code{font-family:M}
 pre{padding-left:2em}
 kbd{font-family:unset;border:1px solid currentColor;padding:0 0.2ex;border-radius:0.2em;margin:0 0.1ex}
 #toc s{margin-left:1em}
