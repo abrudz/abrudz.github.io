@@ -22,10 +22,10 @@ th{text-align:left}
 a:hover{color:#000}
 img{height:1.3ex;opacity:0.67}
 a,h1 img:hover{opacity:1}
-.code{font-family:monospace}
+.code,.c23 td:nth-child(n+2):nth-child(-n+3){font-family:monospace}
 #b:checked~div{filter:invert(1) hue-rotate(180deg)}
 #f:checked~div{font-family:P}
-#f:checked~div pre,#f:checked~div code,#f:checked~div .code{font-family:M}
+#f:checked~div pre,#f:checked~div code,#f:checked~div .code,.c23 td:nth-child(n+2):nth-child(-n+3){font-family:M}
 pre{padding-left:2em}
 kbd{font-family:unset;border:1px solid currentColor;padding:0 0.2ex;border-radius:0.2em;margin:0 0.1ex}
 #toc s{margin-left:1em}
