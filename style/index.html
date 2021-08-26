@@ -67,7 +67,7 @@ r←candidates/⍨10≤candidates</pre>
 			<p>Introduce sections of larger functions with a comment describing the section's purpose. Also comment lines that are non-obvious, but tell what they do, not how they do it.</p>
 			<h2 id="st"><a href="#st">Structure</a></h2>
 			<p>In tradfns, use <code>:Section</code> with a descriptor to delimit larger amounts of code dedicated a separate purpose. One line for every half-dozen or so should be left blank, preferrably preceded by a comment describing the purpose of the next few lines. If two lines have exactly the same structure, for example because two equivalent arguments need preprocessing before being merged, then put a blank line before and after those two to emphasise this.</p>
-			<h2 id="nc"><a href="#nc">Naming Convensions</a></h2>
+			<h2 id="nc"><a href="#nc">Naming Conventions</a></h2>
 			<p>If a function computes something, then it is likely that an appropriate name for the result will also be an appropriate name for the function (save for casing).</p>
 			<p>The below schemes allow the reader to distinguish syntactic classes, thereby enabling static analysis of the code. Note that the naming schemes distinguish the <em>role</em> of identifiers, not the name class (<code>⎕NC</code>). This means that niladic functions are named like variables because they play the syntactic role of arrays.</p>
 			<h3 id="cc"><a href="#cc">Camel Case</a></h3>
