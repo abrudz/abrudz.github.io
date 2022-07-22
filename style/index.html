@@ -29,9 +29,9 @@
 			<nav id="toc"></nav>
 			<h2 id="fn"><a href="#fn">Functions</a></h2>
 			<h3 id="gr"><a href="#gr">General rules</a></h3>
-			<p>Don't be afraid of giving a function a good name even if only to use it once. Avoid diamonds and inline assignments unless necessary to show symmetries. Never use inline assignments that prevent re-executing the line if it errors when partially executed. Modified assignment is fine in moderation, and only within a visual range of the original assignment. Do as many test as necessary rather than relying on trapping errors. Prefer Rank (<code>⍤</code>) over bracket axis. Bracket indexing is fine if <code>⌷</code> would complicate the code. Localise relevant system variables rather than attempt to write code that can handle all combinations of <code>⎕IO</code>, <code>⎕ML</code>, <code>⎕WX</code>, <code>⎕DIV</code> etc.</p>
+			<p>Don’t be afraid of giving a function a good name even if only to use it once. Avoid diamonds and inline assignments unless necessary to show symmetries. Never use inline assignments that prevent re-executing the line if it errors when partially executed. Modified assignment is fine in moderation, and only within a visual range of the original assignment. Do as many test as necessary rather than relying on trapping errors. Prefer Rank (<code>⍤</code>) over bracket axis, and design your functions to be leading axis oriented. Bracket indexing is fine if <code>⌷</code> would complicate the code. Localise relevant system variables rather than attempt to write code that can handle all combinations of <code>⎕IO</code>, <code>⎕ML</code>, <code>⎕WX</code>, <code>⎕DIV</code> etc.</p>
 			<p>Try to keep functions fitting on the screen. Break larger functions into sub-functions if necessary, but do not rely on semi-globals except for small inline dfns that loop to augment an accumulator. Structure your code in namespaces with a well-defined API.</p>
-			<p>For optimal performance, keep your arrays homogenous, flat, and with the last dimension used for data that will be read in sequence. However, this can impact readability, so reserve extremism to performance-critical code. Prefer mathematical approaches over loops. Use <code>]runtime -c "expr1" "expr2"</code> to compare run times.</p>
+			<p>For optimal performance, keep your arrays homogenous, flat, and with the last dimension used for data that will be read in sequence. However, this can impact readability, so reserve extremism to performance-critical code. Prefer mathematical approaches over loops. Stay with Boolean masks as far as possible. Use <code>]runtime -c "expr1" "expr2"</code> to compare run times.</p>
 			<h3 id="pr"><a href="#pr">Parentheses</a></h3>
 			<p>Use sparingly, and especially not for changing the order of execution. Use <code>⍨</code> or a variable instead. For example, instead of
 			<table class="c13 center">
@@ -45,13 +45,13 @@
 			</table>
 			<p>Acceptable uses of parentheses are:</p>
 			<ol>
-				<li>Short inline trains — long trains should be broken out and/or split up</li>
+				<li>Short inline trains &mdash; long trains should be broken out and/or split up</li>
 				<li>Application of derived functions with array operands</li>
 				<li>Stranding including strand assignment &mdash; always parenthesise strand assignement!</li>
-				<li>Forcing slashes to behave as functions</li>
+				<li><s>Forcing slashes to behave as functions</s> Use the <code>⊢⍤/</code> pattern instead</li>
 			</ol>
 			<h3 id="tf"><a href="#tf">Tradfns</a></h3>
-			<p>For large "scripts" and structured programs. Use proper structures, not branching or early returns (<code>→0</code> and <code>:GoTo 0</code> and <code>:Return</code>). Rather, always use a full <code>:If</code> statement to skip to the end.</p>
+			<p>For large "scripts" and structured programs. Use proper structures, not branching or early returns (<code>→0</code> and <code>:GoTo 0</code> and <code>:Return</code>). Rather, always use a full <code>:If</code> statement to skip to the end. Always spell out the full eending of control structures; <code>:EndIf</code> &mdash; not just <code>:End</code>.</p>
 			<h3 id="df"><a href="#df">Dfns</a></h3>
 			<p>For medium sized functions and utilities. Nested dfns are fine, but never use multi-line dfns inline. Rather, give them names and then apply them. Named dfns should be multi-line so they can be traced into, unless truly trivial.</p>
 			<p>Do not use a dfn instead of naming a variable. For example, instead of</p>
@@ -60,12 +60,12 @@
 			<pre>candidates←a,b
 r←candidates/⍨10≤candidates</pre>
 			<h3 id="tc"><a href="#tc">Tacit functions</a></h3>
-			<p>Trains and derived functions can be used inline if they are not too complex. If they need internal parentheses for anything other than the reasons 2&ndash;4 above, they <em>are</em> too complex.</p>
+			<p>Trains and derived functions can be used inline if they are not too complex. If they need internal parentheses for anything other than the reasons 2 and 3 above, they <em>are</em> too complex.</p>
 			<h2 id="id"><a href="#id">Identifiers</a></h2>
 			<p>Use proper names for things, not abbreviations, unless common for the field in question. Name variables for what they signify, not how they are used. For example, call a mask of chess positions that are inside the board <code>inside</code> rather than <code>valid</code>. Name functions for what they do or compute rather than what they are used for. For example, name a function <code>Attributes</code> rather than <code>ExtractAttributes</code> and <code>Compress</code> rather than <code>ApplyCompression</code>.</p>
 			<h2 id="cm"><a href="#cm">Comments</a></h2>
 			<p>All named functions should begin with a comment on their purpose. Larger functions should begin with a comment section describing argument(s) and result.</p>
-			<p>Introduce sections of larger functions with a comment describing the section's purpose. Also comment lines that are non-obvious, but tell what they do, not how they do it.</p>
+			<p>Introduce sections of larger functions with a comment describing the section’&mdash;s purpose. Also comment lines that are non-obvious, but tell what they do, not how they do it.</p>
 			<h2 id="st"><a href="#st">Structure</a></h2>
 			<p>In tradfns, use <code>:Section</code> with a descriptor to delimit larger amounts of code dedicated a separate purpose. One line for every half-dozen or so should be left blank, preferrably preceded by a comment describing the purpose of the next few lines. If two lines have exactly the same structure, for example because two equivalent arguments need preprocessing before being merged, then put a blank line before and after those two to emphasise this.</p>
 			<h2 id="nc"><a href="#nc">Naming Conventions</a></h2>
