@@ -51,7 +51,7 @@
 				<li><s>Forcing slashes to behave as functions</s> Use the <code>⊢⍤/</code> pattern instead</li>
 			</ol>
 			<h3 id="tf"><a href="#tf">Tradfns</a></h3>
-			<p>For large "scripts" and structured programs. Use proper structures, not branching or early returns (<code>→0</code> and <code>:GoTo 0</code> and <code>:Return</code>). Rather, always use a full <code>:If</code> statement to skip to the end. Always spell out the full eending of control structures; <code>:EndIf</code> &mdash; not just <code>:End</code>.</p>
+			<p>For large "scripts" and structured programs. Use proper structures, not branching or early returns (<code>→0</code> and <code>:GoTo 0</code> and <code>:Return</code>). Rather, always use a full <code>:If</code> statement to skip to the end. Always spell out the full ending of control structures; <code>:EndIf</code> &mdash; not just <code>:End</code>.</p>
 			<h3 id="df"><a href="#df">Dfns</a></h3>
 			<p>For medium sized functions and utilities. Nested dfns are fine, but never use multi-line dfns inline. Rather, give them names and then apply them. Named dfns should be multi-line so they can be traced into, unless truly trivial.</p>
 			<p>Do not use a dfn instead of naming a variable. For example, instead of</p>
@@ -75,16 +75,10 @@ r←candidates/⍨10≤candidates</pre>
 			<table class="c23">
 				<tbody>
 					<tr>
-						<td>labels use all caps</td>
-						<td> NAME</td>
-						<td> MULTIWORD</td>
-						<td>labels</td>
-					</tr>
-					<tr>
 						<td>arrays use lower camel case (a.k.a. dromedary case)</td>
 						<td> name</td>
 						<td> multiWord</td>
-						<td>constants, variables, fields, properties, niladic functions</td>
+						<td>labels, constants, variables, fields, properties, niladic functions</td>
 					</tr>
 					<tr>
 						<td>refs use lower camel case with underscore suffix</td>
@@ -116,16 +110,10 @@ r←candidates/⍨10≤candidates</pre>
 			<table class="c23">
 				<tbody>
 					<tr>
-						<td>labels use snake case caps</td>
-						<td> NAME</td>
-						<td> MULTI_WORD</td>
-						<td>labels</td>
-					</tr>
-					<tr>
 						<td>arrays use lower snake case</td>
 						<td> name</td>
 						<td> multi_word</td>
-						<td>constants, variables, fields, properties, niladic functions</td>
+						<td>labels, constants, variables, fields, properties, niladic functions</td>
 					</tr>
 					<tr>
 						<td>refs use lower snake case with underscore suffix</td>
