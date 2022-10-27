@@ -2,7 +2,7 @@
 
 # APL Notation As A Tool Of Thought podcast <sup>[RSS](/feed.xml)︎︎︎</sup>
 
-## Indexing in APL vs Yorick: [Video (YouTube)](https://www.youtube.com/watch?v=R_dpMVyyCEo&list=PLYKQVqyrAEj8Q7BdOgakZCAGf6ReO1cue), [Audio (download)](/audio/2022-10-06-Indexing-in-APL-vs-Yorick.mp3)
+## Indexing in APL vs Yorick: [Video (YouTube)](https://www.youtube.com/watch?v=R_dpMVyyCEo&list=PLYKQVqyrAEj8Q7BdOgakZCAGf6ReO1cue), [Audio (download)](/aplnaatot/2022-10-06-Indexing-in-APL-vs-Yorick.mp3)
 
 In this inaugural episode of the APL Notation As a Tool Of Thought (APLNAATOT) podcast, Richard and Adám discuss the indexing notation and broadcasting rules of the Yorick programming language based on a tweet by Jeremy Howard, and conclude that the two approaches achieve the same thing; one by manipulating data shape until broadcasting achieves desired result, the other by applying additional broadcasting rules on the existing shapes.
 
