@@ -3,13 +3,32 @@
     <meta charset="UTF-8">
     <link rel="alternate" type="application/atom+xml"
     title="{{ site.title }}" href="/feed.xml" />
-    <link rel="shortcut icon" href="favicon.svg">
+    <link rel="shortcut icon" href="logo.svg">
+    <link rel="stylesheet" href="style.css">
     <title>APLNAATOT podcast</title>
   </head>
   <body>
-    <h1>APL Notation As A Tool Of Thought podcast <sup><a href="/feed.xml" target="_blank">RSS</a></sup></h1>
-    <ol>
-      <li><a href="/aplnaatot/2022-10-06-Indexing-in-APL-vs-Yorick">Indexing in APL vs Yorick</a></li>
-    </ol>
+    <h1><img src="logo.svg"> <a href="https://apl.wiki">APL</a> <a href="https://www.jsoftware.com/papers/tot.htm">Notation As A Tool Of Thought</a> <span><a href="/feed.xml"><img src="rss.svg" alt="RSS" title="RSS feed"></a><a href="https://www.youtube.com/playlist?list=PLYKQVqyrAEj8Q7BdOgakZCAGf6ReO1cue"><img src="yt.svg" alt="YouTube" title="YouTube playlist"></a></span></h1>
+    <details>
+      <summary>Hosts</summary>
+        <p><a href="https://rikedyp.uk/" target="_blank">Rich Park</a> <a href="https://www.youtube.com/rikedyp" target="_blank"><img src="yt.svg" alt="YouTube" title="YouTube channel"></a> is an APL instructor at Dyalog Ltd, has taught APL at multiple schools, and created <a href="https://course.dyalog.com/" target="_blank">an online self-study course</a>.</p>
+        <p><a href="https://abrudz.github.io" target="_blank">Adám Brudzewsky</a> <a href="https://www.youtube.com/a_brudz" target="_blank"><img src="yt.svg" alt="YouTube" title="YouTube channel"></a> founded the <a href="https://apl.wiki/APL_Orchard">APL Orchard</a> chat room and <a href="https://apl.wiki/APLcart">APLcart</a>, and is the co-author of the <a href="https://xpqz.github.io/cultivations">APL Cultivations</a> book.</p>
+        <p>Both are <a href="https://apl.wiki/Dyalog_Ltd." target="_blank">Dyalog Ltd</a> employees, regular hosts of <a href="https://apl.wiki/Dyalog_webinar" target="_blank">Dyalog webinars</a>, and recurring panellists on the <a href="https://apl.wiki/Array_Cast">Array Cast</a> podcast.
+    </details>
+    <table>
+      <tr>
+        <th>
+          2022-10-06: Indexing in APL vs Yorick<br>
+          <audio controls src="2022-10-06-Indexing-in-APL-vs-Yorick.mp3"></audio>
+        </th>
+        <th>
+          <a href="https://www.youtube.com/watch?v=R_dpMVyyCEo&list=PLYKQVqyrAEj8Q7BdOgakZCAGf6ReO1cue"><img src="yt.svg" title="Watch on YouTube" alt="YouTube"></a>
+          <a href="2022-10-06-Indexing-in-APL-vs-Yorick.mp3" download><img src="mp3.svg" title="Download MP3" alt="MP3"></a>
+        </th>
+        <td>
+          In this inaugural episode, we discuss <a target="_blank" href="https://software.llnl.gov/yorick-doc/qref/qrfunc06.html">the indexing notation</a> and broadcasting rules of the Yorick programming language based on <a target="_blank" href="https://twitter.com/jeremyphoward/status/1575327412489187328">a tweet by Jeremy Howard</a>, and conclude that the two approaches achieve the same thing; one by manipulating data shape until broadcasting achieves desired result, the other by applying additional broadcasting rules on the existing shapes.
+        </td>
+      </tr>
+    </table>
   </body>
 </html>
