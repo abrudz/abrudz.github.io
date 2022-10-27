@@ -1,0 +1,5 @@
+plugins:
+  - jekyll-feed
+title: APLNAATOT Podcast
+description: APL Notation As A Tool Of Thought podcast
+author: Adám Brudzewsky
