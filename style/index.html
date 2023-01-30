@@ -52,6 +52,7 @@
 			</ol>
 			<h3 id="tf"><a href="#tf">Tradfns</a></h3>
 			<p>For large "scripts" and structured programs. Use proper structures, not branching or early returns (<code>→0</code> and <code>:GoTo 0</code> and <code>:Return</code>). Rather, always use a full <code>:If</code> statement to skip to the end. Always spell out the full ending of control structures; <code>:EndIf</code> &mdash; not just <code>:End</code>.</p>
+      <p>Keep your code flat by testing and signalling error conditions first using <code>:ElseIf</code>s, then perform the main computation in the <code>:Else</code> block.</p>
 			<h3 id="df"><a href="#df">Dfns</a></h3>
 			<p>For medium sized functions and utilities. Nested dfns are fine, but never use multi-line dfns inline. Rather, give them names and then apply them. Named dfns should be multi-line so they can be traced into, unless truly trivial.</p>
 			<p>Do not use a dfn instead of naming a variable. For example, instead of</p>
